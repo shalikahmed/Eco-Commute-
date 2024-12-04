@@ -1,12 +1,13 @@
 {
-    "build": {
-      "env": {
-        "NPM_FLAGS": "--legacy-peer-deps"
-      },
-      "commands": {
-        "install": "npm install $NPM_FLAGS",
-        "build": "npm run build"
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "installCommand": "npm install --legacy-peer-deps",
+          "buildCommand": "npm run build"
+        }
       }
-    }
+    ]
   }
   
